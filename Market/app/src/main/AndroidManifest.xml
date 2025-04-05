@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".home.HomepageActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".chat.ChatListActivity">
+            <!-- 如果需要在其他地方启动这个 Activity，可以添加 intent-filter -->
+        </activity>
+            <!-- 如果需要在其他地方启动这个 Activity，可以添加 intent-filter -->
+        <activity android:name=".profile.ProfileActivity">
+        </activity>
+        <activity android:name=".square.CommodityListActivity">
+        </activity>
+        <activity android:name=".square.CommodityDetailActivity"/>
+        <activity android:name=".profile.FavoriteActivity"/>
+        <activity android:name=".profile.address.AddressActivity"/>
+        <activity android:name=".profile.SettingsActivity"/>
+        <activity android:name=".profile.DeveloperNewsActivity"/>
+        <activity android:name=".profile.PrivacyPolicyActivity"/>
+        <activity android:name=".profile.OrderActivity">
+        </activity>
+        <activity android:name=".chat.ChatMsgView">
+        </activity>
+        <activity android:name=".commodity.AddCommodityActivity" />
+        <activity android:name=".profile.address.AddAddressActivity" />
+        <activity android:name=".profile.cart.CartActivity"/>
+        <activity android:name=".profile.comment.AddCommentActivity"/>
+        <activity android:name=".profile.comment.CommentActivity"/>
+        <activity android:name=".profile.PersonalInfoActivity"/>
+        <activity android:name=".square.BuyCommodityActivity"/>
+        <activity android:name=".notification.NotificationActivity"/>
+        <activity android:name=".profile.UserInfoListActivity"
+            android:exported="false" />
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"
+        tools:ignore="ManifestOrder" />
+</manifest>

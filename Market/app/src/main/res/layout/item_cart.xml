@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:layout_marginBottom="8dp">
+
+    <!-- 地址名称 -->
+
+    <!-- 地址详情 -->
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="26dp"
+        android:layout_height="27dp"
+        android:text="Option 1" />
+
+    <ImageView
+        android:id="@+id/commodity_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="33dp"
+        android:layout_toRightOf="@id/checkBox"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_order_placeholder" />
+
+    <TextView
+        android:id="@+id/commodity_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="33dp"
+        android:layout_toRightOf="@id/commodity_image"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="商品名称"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <com.example.myapplication.InputNumberView
+        android:id="@+id/commodity_num"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_below="@id/commodity_price"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="right"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="-34dp"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@id/commodity_image"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:btnTextSize="14sp"
+        app:btnWidth="36dp"
+        app:tvWidth="50dp"
+        tools:ignore="MissingClass" />
+
+    <TextView
+        android:id="@+id/commodity_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commodity_name"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="0dp"
+        android:layout_toRightOf="@id/commodity_image"
+        android:text="价格"
+        android:textColor="#999999"
+        android:textSize="14sp" />
+
+    <!-- 默认地址标识（可以是一个勾选框或文字） -->
+
+    <!-- 删除按钮 -->
+
+    <TextView
+        android:id="@+id/address_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commodity_price"
+        android:layout_marginLeft="206dp"
+        android:layout_marginTop="-41dp"
+        android:layout_toRightOf="@id/commodity_image"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#FF4081"
+        android:textSize="14sp" />
+
+    <ImageButton
+        android:id="@+id/cart_item_remove_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="17dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_delete" />
+</RelativeLayout>

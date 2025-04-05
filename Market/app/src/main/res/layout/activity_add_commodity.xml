@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_margin="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加商品"
+        android:textSize="24sp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/editTextCommodityName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="商品名称"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:padding="12dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerCommodityType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="商品类型"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/editTextReleaseDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="发布日期"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/editTextCommodityDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="商品描述"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="16dp"
+        android:minLines="3"/>
+
+    <EditText
+        android:id="@+id/editTextCommodityPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="商品价格"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:padding="12dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品数量："
+            android:textSize="16sp"/>
+
+        <com.example.myapplication.InputNumberView
+            android:id="@+id/commodity_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            app:btnTextSize="14sp"
+            app:btnWidth="36dp"
+            app:tvWidth="50dp"/>
+    </LinearLayout>
+
+    <Button
+        android:backgroundTint="@color/yellow"
+        android:id="@+id/button_select_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择图片"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:padding="12dp"/>
+
+    <Button
+        android:backgroundTint="@color/yellow"
+        android:id="@+id/button_add_commodity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加商品"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:padding="12dp"/>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/commodity_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="8dp" />
+
+</LinearLayout>

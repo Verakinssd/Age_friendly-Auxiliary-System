@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:layout_marginBottom="8dp">
+
+<!--     地址图标-->
+    <ImageView
+        android:id="@+id/address_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_adress"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" />
+
+    <!-- 地址名称 -->
+    <TextView
+        android:id="@+id/address_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="收货人"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_toRightOf="@id/address_icon"
+        android:layout_marginLeft="16dp"
+        android:layout_alignParentTop="true"
+        android:maxLines="1"
+        android:ellipsize="end" />
+    <TextView
+        android:id="@+id/address_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13812345678"
+        android:textSize="14sp"
+        android:textColor="#999999"
+        android:layout_toRightOf="@id/address_icon"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@id/address_detail"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <!-- 地址详情 -->
+    <TextView
+        android:id="@+id/address_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="详细地址"
+        android:textSize="14sp"
+        android:textColor="#999999"
+        android:layout_toRightOf="@id/address_icon"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@id/address_name" />
+
+    <!-- 默认地址标识（可以是一个勾选框或文字） -->
+
+    <!-- 删除按钮 -->
+
+    <TextView
+        android:id="@+id/address_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/address_phone"
+        android:layout_marginLeft="206dp"
+        android:layout_marginTop="-41dp"
+        android:layout_toRightOf="@id/address_icon"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="#FF4081"
+        android:textSize="14sp" />
+
+    <ImageButton
+        android:id="@+id/button_delete_address"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_delete"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_alignParentEnd="true"
+        android:scaleType="fitCenter"
+        android:layout_centerVertical="true" />
+</RelativeLayout>

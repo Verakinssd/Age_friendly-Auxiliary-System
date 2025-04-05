@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/buaa_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户注册"
+        android:layout_below="@id/buaa_logo"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Username Input -->
+    <EditText
+        android:id="@+id/reg_inputUserName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:hint="请输入用户名"
+        android:textColorHint="#A1A1A1" />
+
+    <!-- First Password Input -->
+    <EditText
+        android:id="@+id/reg_inputPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/reg_inputUserName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="40dp"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:textColorHint="#A1A1A1" />
+
+    <!-- Confirm Password Input -->
+    <EditText
+        android:id="@+id/reg_inputPassword_again"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/reg_inputPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="40dp"
+        android:hint="请再次输入密码"
+        android:inputType="textPassword"
+        android:textColorHint="#A1A1A1" />
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/register"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/reg_inputPassword_again"
+        android:layout_marginTop="25dp"
+        android:background="@color/yellow"
+        android:text="注   册"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/register"
+        android:layout_marginTop="25dp"
+        android:background="@color/yellow"
+        android:text="返   回"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>

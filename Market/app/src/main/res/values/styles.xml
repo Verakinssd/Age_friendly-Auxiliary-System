@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="AppTheme" parent="Base.Theme.FloatingSearchDemo">
+    </style>
+
+    <style name="Base.Theme.FloatingSearchDemo" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">#ffffff</item>
+        <item name="buttonStyle"> @style/CustomButton</item>
+    </style>
+
+    <style name="CustomButton" parent="Widget.AppCompat.Button">
+        <item name="android:background"> #FF5722 </item>
+    </style>
+
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_margin="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="收货人姓名"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="联系电话"
+        android:inputType="phone"/>
+
+    <EditText
+        android:id="@+id/editTextDetailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="详细地址"
+        android:inputType="text"/>
+    <CheckBox
+        android:id="@+id/checkBoxDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设为默认地址"/>
+
+    <Button
+        android:backgroundTint="@color/yellow"
+        android:id="@+id/buttonSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存地址"/>
+
+</LinearLayout>
