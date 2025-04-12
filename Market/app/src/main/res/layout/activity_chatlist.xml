@@ -60,15 +60,6 @@
 
         <Button
             android:layout_margin="3dp"
-            android:id="@+id/button_sell"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/yellow"
-            android:text="售卖" />
-
-        <Button
-            android:layout_margin="3dp"
             android:id="@+id/button_messages"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

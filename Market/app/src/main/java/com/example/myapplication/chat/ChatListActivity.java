@@ -43,8 +43,6 @@ public class ChatListActivity extends AppCompatActivity {
     private HashMap<String, ArrayList<ChatItem>> chatList = new HashMap<>();
     private String userId = String.valueOf(MainActivity.getCurrentUserId());
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,12 +152,6 @@ public class ChatListActivity extends AppCompatActivity {
         Button homeButton = findViewById(R.id.button_home);
         homeButton.setOnClickListener(v -> {
             Intent intent = new Intent(ChatListActivity.this, HomepageActivity.class);
-            startActivity(intent);
-        });
-
-        Button sellButton = findViewById(R.id.button_sell);
-        sellButton.setOnClickListener(v -> {
-            Intent intent = new Intent(ChatListActivity.this, AddCommodityActivity.class);
             startActivity(intent);
         });
     }

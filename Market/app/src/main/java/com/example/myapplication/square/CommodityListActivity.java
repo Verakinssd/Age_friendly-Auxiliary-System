@@ -130,11 +130,6 @@ public class CommodityListActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        findViewById(R.id.button_sell).setOnClickListener(v -> {
-            Intent intent = new Intent(CommodityListActivity.this, AddCommodityActivity.class);
-            startActivity(intent);
-        });
-
         findViewById(R.id.button_square).setOnClickListener(v -> {
             Intent intent = new Intent(CommodityListActivity.this, CommodityListActivity.class);
             startActivity(intent);

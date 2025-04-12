@@ -35,7 +35,8 @@ dependencies {
     implementation("com.github.arimorty:floatingsearchview:2.1.1")
     implementation("org.apache.commons:commons-text:1.10.0")
     implementation("com.android.support:recyclerview-v7:24.2.1")
-    implementation ("com.github.bumptech.glide:glide:4.15.1")  // Glide 依赖
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    implementation(libs.firebase.crashlytics.buildtools)  // Glide 依赖
     annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")  // Glide 注解处理器
 //    implementation("io.minio:minio:8.0.0")
 //    implementation("io.jsonwebtoken:jjwt:0.12.6")

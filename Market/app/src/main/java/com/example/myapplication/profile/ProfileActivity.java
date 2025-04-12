@@ -123,12 +123,6 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Button sellButton= findViewById(R.id.button_sell);
-        sellButton.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, AddCommodityActivity.class);
-            startActivity(intent);
-        });
-
         Button homeButton = findViewById(R.id.button_home);
         homeButton.setOnClickListener(v -> {
             Intent intent = new Intent(ProfileActivity.this, HomepageActivity.class);

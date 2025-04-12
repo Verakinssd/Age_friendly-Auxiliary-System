@@ -42,6 +42,7 @@ import com.example.myapplication.square.CommodityListActivity;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.HttpClient;
 import com.zhipu.oapi.ClientV4;
 import com.zhipu.oapi.Constants;
 import com.zhipu.oapi.service.v4.model.ChatCompletionRequest;
@@ -72,6 +73,8 @@ public class HomepageActivity extends AppCompatActivity {
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
+    private static final String API_URL = "https://api.deepseek/com/v1/chat/completion";
+
     private TextView textApiResult;
     private TextView textRecommendations;
     private RecyclerView recyclerView;
@@ -87,6 +90,7 @@ public class HomepageActivity extends AppCompatActivity {
         setContentView(layout.activity_homepage);
 
         String apiKey = getString(string.api_key);
+
         client = new ClientV4.Builder(apiKey)
                 .enableTokenCache()
                 .networkConfig(300, 100, 100, 100, TimeUnit.SECONDS)
@@ -118,25 +122,25 @@ public class HomepageActivity extends AppCompatActivity {
 
         //List<Commodity> allCommodities = LitePal.findAll(Commodity.class);
         List<Commodity> allCommodities = findCommodityNotEmpty();
-        for (Commodity commodity : allCommodities) {
-            Log.e("commodity : ", commodity.getCommodityName());
-        }
+//        for (Commodity commodity : allCommodities) {
+//            Log.e("commodity : ", commodity.getCommodityName());
+//        }
         StringBuilder queryPrompt = new StringBuilder();
-        if (!allCommodities.isEmpty()) {
-            JSONObject queryJson = null;
-            try {
-                queryJson = buildQueryJson(allCommodities);
-            } catch (JSONException e) {
-                textApiResult.setText("Error JSON: " + e.getMessage());
-                Log.e("queryJSON ERROR ", e.getMessage());
-            }
-            try {
-                queryPrompt.append(buildQueryPrompt(queryJson));
-            } catch (JSONException e) {
-                textApiResult.setText("Error JSON: " + e.getMessage());
-                Log.e("queryPrompt ERROR ", e.getMessage());
-            }
-        }
+//        if (!allCommodities.isEmpty()) {
+//            JSONObject queryJson = null;
+//            try {
+//                queryJson = buildQueryJson(allCommodities);
+//            } catch (JSONException e) {
+//                textApiResult.setText("Error JSON: " + e.getMessage());
+//                Log.e("queryJSON ERROR ", e.getMessage());
+//            }
+//            try {
+//                queryPrompt.append(buildQueryPrompt(queryJson));
+//            } catch (JSONException e) {
+//                textApiResult.setText("Error JSON: " + e.getMessage());
+//                Log.e("queryPrompt ERROR ", e.getMessage());
+//            }
+//        }
 
         buttonCallApi.setOnClickListener(v -> {
             String query = editQueryInput.getText().toString();
@@ -157,60 +161,60 @@ public class HomepageActivity extends AppCompatActivity {
             }
         });
 
-        if (findCommodityNotEmpty().isEmpty()) {
-            textRecommendations.setText("商品列表中暂时为空");
-        }
-        else {
-            textRecommendations.setText("正在为您推荐商品：\n");
-            String userName = getCurrentUsername();
-            Long userId = getCurrentUserId();
-
-            // 收藏列表
-            List<Hobby> hobbies = DBFunction.findHobbyByName(userName);
-            // 购物车项列表
-            List<CartItem> cartItems = DBFunction.getCart(userName);
-            // 订单列表
-            List<OrderTable> orderTables = DBFunction.getOrdersFromUser(userId);
-            List<Commodity> hobbyCommodities = new ArrayList<>();
-            List<Commodity> cartItemCommodities = new ArrayList<>();
-            List<Commodity> orderTableCommodities = new ArrayList<>();
-            if (hobbies != null) {
-                for (Hobby hobby : hobbies) {
-                    hobbyCommodities.add(getCommodity(hobby.getCommodityId()));
-                }
-            }
-            if (cartItems != null) {
-                for (CartItem cartItem : cartItems) {
-                    cartItemCommodities.add(getCommodity(cartItem.getCommodityId()));
-                }
-            }
-            for (OrderTable orderTable : orderTables) {
-                orderTableCommodities.add(getCommodity(orderTable.getCommodityId()));
-            }
-
-            JSONObject userFeatureJSON = null;
-
-            try {
-                userFeatureJSON = buildUserFeatureJson(hobbyCommodities, cartItemCommodities, orderTableCommodities, allCommodities);
-            } catch (JSONException e) {
-                textRecommendations.setText("userFeatureJSON Error: " + e.getMessage());
-                e.printStackTrace();
-            }
-            String prompt = null;
-            try {
-                prompt = buildModelInput(userFeatureJSON);
-            } catch (JSONException e) {
-                textRecommendations.setText("prompt Error: " + e.getMessage());
-            }
-            Log.e("prompt : ", prompt);
-            // 调用模型接口，获取推荐列表
-            try {
-                commodityRecommendationSystem(prompt);
-            } catch (JSONException e) {
-                textRecommendations.setText("commodityRecommendationSystem Error: "  + e.getMessage());
-                e.printStackTrace();
-            }
-        }
+//        if (findCommodityNotEmpty().isEmpty()) {
+//            textRecommendations.setText("商品列表中暂时为空");
+//        }
+//        else {
+//            textRecommendations.setText("正在为您推荐商品：\n");
+//            String userName = getCurrentUsername();
+//            Long userId = getCurrentUserId();
+//
+//            // 收藏列表
+//            List<Hobby> hobbies = DBFunction.findHobbyByName(userName);
+//            // 购物车项列表
+//            List<CartItem> cartItems = DBFunction.getCart(userName);
+//            // 订单列表
+//            List<OrderTable> orderTables = DBFunction.getOrdersFromUser(userId);
+//            List<Commodity> hobbyCommodities = new ArrayList<>();
+//            List<Commodity> cartItemCommodities = new ArrayList<>();
+//            List<Commodity> orderTableCommodities = new ArrayList<>();
+//            if (hobbies != null) {
+//                for (Hobby hobby : hobbies) {
+//                    hobbyCommodities.add(getCommodity(hobby.getCommodityId()));
+//                }
+//            }
+//            if (cartItems != null) {
+//                for (CartItem cartItem : cartItems) {
+//                    cartItemCommodities.add(getCommodity(cartItem.getCommodityId()));
+//                }
+//            }
+//            for (OrderTable orderTable : orderTables) {
+//                orderTableCommodities.add(getCommodity(orderTable.getCommodityId()));
+//            }
+//
+//            JSONObject userFeatureJSON = null;
+//
+//            try {
+//                userFeatureJSON = buildUserFeatureJson(hobbyCommodities, cartItemCommodities, orderTableCommodities, allCommodities);
+//            } catch (JSONException e) {
+//                textRecommendations.setText("userFeatureJSON Error: " + e.getMessage());
+//                e.printStackTrace();
+//            }
+//            String prompt = null;
+//            try {
+//                prompt = buildModelInput(userFeatureJSON);
+//            } catch (JSONException e) {
+//                textRecommendations.setText("prompt Error: " + e.getMessage());
+//            }
+//            Log.e("prompt : ", prompt);
+//            // 调用模型接口，获取推荐列表
+//            try {
+//                commodityRecommendationSystem(prompt);
+//            } catch (JSONException e) {
+//                textRecommendations.setText("commodityRecommendationSystem Error: "  + e.getMessage());
+//                e.printStackTrace();
+//            }
+//        }
         // 这里可以设置其他初始化逻辑，比如加载数据等
         Button messagesButton = findViewById(id.button_messages);
         messagesButton.setOnClickListener(v -> {
@@ -221,12 +225,6 @@ public class HomepageActivity extends AppCompatActivity {
         Button userButton = findViewById(id.button_profile);
         userButton.setOnClickListener(v -> {
             Intent intent = new Intent(HomepageActivity.this, ProfileActivity.class);
-            startActivity(intent);
-        });
-
-        Button sellButton = findViewById(id.button_sell);
-        sellButton.setOnClickListener(v -> {
-            Intent intent = new Intent(HomepageActivity.this, AddCommodityActivity.class);
             startActivity(intent);
         });
 

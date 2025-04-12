@@ -21,14 +21,14 @@
         android:id="@+id/buaa_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/buaa_logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="北航跳蚤市场登录"
+        android:text="老年友好型智能手机辅助系统"
         android:layout_below="@id/buaa_logo"
         android:layout_centerHorizontal="true"
         android:textColor="#000000"
@@ -62,13 +62,6 @@
         android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
         android:textSize="20dp" />
-
-    <ImageView
-        android:id="@+id/gif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="520dp"
-        android:src="@drawable/logingif" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
