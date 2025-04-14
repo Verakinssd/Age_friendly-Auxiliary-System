@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tv_popup_text" type="id" />
+    <item name="blur_container" type="id" />
+    <item name="popup_content_container" type="id" />
+    <item name="btn_close_popup" type="id" />
+</resources>
