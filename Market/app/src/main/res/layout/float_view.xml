@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/float_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AA000000">
+
+    <LinearLayout
+        android:id="@+id/float_container"
+        android:layout_width="317dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/popup_bg"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="24dp">  <!-- 阴影效果 -->
+
+        <TextView
+            android:id="@+id/tv_popup_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="等待查询结果..."
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellow"
+                android:text="上一步"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/yellow"
+                android:text="下一步"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="关闭" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/popup_bg"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/popup_step_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/popup_next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下一步"
+            android:backgroundTint="@color/yellow" />
+
+        <Button
+            android:id="@+id/popup_close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+</LinearLayout>
