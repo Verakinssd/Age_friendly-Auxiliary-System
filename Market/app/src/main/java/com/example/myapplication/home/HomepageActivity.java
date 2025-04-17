@@ -46,7 +46,7 @@ public class HomepageActivity extends AppCompatActivity {
             }
 
             Intent intent = new Intent(HomepageActivity.this, FloatViewService.class);
-            intent.putExtra("query", query);
+            intent.putExtra("query", query + "回答请尽量简洁");
             startService(intent);
         });
 

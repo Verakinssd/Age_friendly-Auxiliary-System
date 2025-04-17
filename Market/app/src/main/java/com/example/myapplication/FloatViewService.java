@@ -167,7 +167,7 @@ public class FloatViewService extends Service {
                 String requestId = "BUAA_Android-TradingAssistant : " + System.currentTimeMillis();
 
                 ChatCompletionRequest chatCompletionRequest = ChatCompletionRequest.builder()
-                        .model("glm-4-flash")
+                        .model("GLM-4-Flash-250414")
                         .stream(false)
                         .invokeMethod(Constants.invokeMethod)
                         .messages(messageList)
