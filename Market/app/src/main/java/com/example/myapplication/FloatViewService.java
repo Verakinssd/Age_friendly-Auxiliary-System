@@ -24,9 +24,12 @@ import com.zhipu.oapi.Constants;
 import com.zhipu.oapi.service.v4.model.ChatCompletionRequest;
 import com.zhipu.oapi.service.v4.model.ChatMessage;
 import com.zhipu.oapi.service.v4.model.ChatMessageRole;
+import com.zhipu.oapi.service.v4.model.ChatTool;
+import com.zhipu.oapi.service.v4.model.ChatToolType;
 import com.zhipu.oapi.service.v4.model.Choice;
 import com.zhipu.oapi.service.v4.model.ModelApiResponse;
 import com.zhipu.oapi.service.v4.model.ModelData;
+import com.zhipu.oapi.service.v4.model.WebSearch;
 
 import org.json.JSONException;
 
@@ -164,7 +167,16 @@ public class FloatViewService extends Service {
                 ChatMessage chatMessage = new ChatMessage(ChatMessageRole.USER.value(), query);
                 List<ChatMessage> messageList = new ArrayList<>();
                 messageList.add(chatMessage);
-                String requestId = "BUAA_Android-TradingAssistant : " + System.currentTimeMillis();
+                String requestId = "BUAA_Android-AgeFriendlyTradingAssistant : " + System.currentTimeMillis();
+                List<ChatTool> chatToolList = new ArrayList<>();
+                ChatTool chatTool = new ChatTool();
+                chatTool.setType(ChatToolType.WEB_SEARCH.value());
+                WebSearch webSearch = new WebSearch();
+                webSearch.setSearch_query(query);
+                webSearch.setSearch_result(true);
+                webSearch.setEnable(true);
+                chatTool.setWeb_search(webSearch);
+                chatToolList.add(chatTool);
 
                 ChatCompletionRequest chatCompletionRequest = ChatCompletionRequest.builder()
                         .model("GLM-4-Flash-250414")
@@ -172,6 +184,8 @@ public class FloatViewService extends Service {
                         .invokeMethod(Constants.invokeMethod)
                         .messages(messageList)
                         .requestId(requestId)
+                        .tools(chatToolList)
+                        .toolChoice("auto")
                         .build();
 
                 ModelApiResponse invokeModelApiResp = client.invokeModelApi(chatCompletionRequest);
