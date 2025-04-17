@@ -78,19 +78,7 @@ public class User extends LitePalSupport {
     }
 
     public void setUsername(String username) {
-//        if (DBFunction.isUsernameExist(username)) {
-//            Log.w(DBFunction.TAG, "用户名重复");
-//            return false;
-//        } else if (username == null) {
-//            Log.w(DBFunction.TAG, "用户名为空");
-//            return false;
-//        } else {
         this.username = username;
-    }
-
-
-    public String getPassword() {
-        return password;
     }
 
     public void setPassword(String password) {

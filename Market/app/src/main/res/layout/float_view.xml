@@ -3,7 +3,7 @@
     android:id="@+id/float_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AA000000">
+    android:background="@android:color/white">
 
     <LinearLayout
         android:id="@+id/float_container"
@@ -13,7 +13,7 @@
         android:background="@drawable/popup_bg"
         android:elevation="8dp"
         android:orientation="vertical"
-        android:padding="24dp">  <!-- 阴影效果 -->
+        android:padding="24dp">
 
         <TextView
             android:id="@+id/tv_popup_text"
@@ -42,7 +42,7 @@
             <Button
                 android:id="@+id/btn_next"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
                 android:backgroundTint="@color/yellow"
                 android:text="下一步"

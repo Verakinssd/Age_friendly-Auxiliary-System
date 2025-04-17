@@ -4,14 +4,6 @@
     <version value="19"></version>
 
     <list>
-        <mapping class="com.example.myapplication.database.Commodity"></mapping>
         <mapping class="com.example.myapplication.database.User"></mapping>
-        <mapping class="com.example.myapplication.database.Hobby"></mapping>
-        <mapping class="com.example.myapplication.database.Message"></mapping>
-        <mapping class="com.example.myapplication.database.Contact"></mapping>
-        <mapping class="com.example.myapplication.database.CartItem"></mapping>
-        <mapping class="com.example.myapplication.database.Comment"></mapping>
-        <mapping class="com.example.myapplication.database.OrderTable"></mapping>
-        <mapping class="com.example.myapplication.database.Notification"></mapping>
     </list>
 </litepal>

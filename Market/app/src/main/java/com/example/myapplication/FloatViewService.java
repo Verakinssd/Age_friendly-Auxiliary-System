@@ -179,22 +179,22 @@ public class FloatViewService extends Service {
                 chatToolList.add(chatTool);
 
                 ChatCompletionRequest chatCompletionRequest = ChatCompletionRequest.builder()
-                        .model("GLM-4-Flash-250414")
+                        .model("GLM-Z1-Flash")
                         .stream(false)
                         .invokeMethod(Constants.invokeMethod)
                         .messages(messageList)
                         .requestId(requestId)
                         .tools(chatToolList)
-                        .toolChoice("true")
                         .build();
 
                 ModelApiResponse invokeModelApiResp = client.invokeModelApi(chatCompletionRequest);
                 ModelData modelData = invokeModelApiResp.getData();
                 Choice firstChoice = modelData.getChoices().get(0);
                 String content = (String) firstChoice.getMessage().getContent();
-
-                // 模拟日志输出
                 Log.d("FloatViewService", "大模型返回内容：" + content);
+
+                content = content.replaceAll("(?s)<think>.*?</think>", "");
+                // 模拟日志输出
 
                 // 解析大模型返回的文本为多个步骤并更新 UI
                 stepList = parseSteps(content);

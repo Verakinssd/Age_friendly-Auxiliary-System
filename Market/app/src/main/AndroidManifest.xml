@@ -40,32 +40,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".chat.ChatListActivity">
-            <!-- 如果需要在其他地方启动这个 Activity，可以添加 intent-filter -->
-        </activity>
             <!-- 如果需要在其他地方启动这个 Activity，可以添加 intent-filter -->
         <activity android:name=".profile.ProfileActivity">
         </activity>
-        <activity android:name=".square.CommodityListActivity">
-        </activity>
-        <activity android:name=".square.CommodityDetailActivity"/>
-        <activity android:name=".profile.FavoriteActivity"/>
-        <activity android:name=".profile.address.AddressActivity"/>
         <activity android:name=".profile.SettingsActivity"/>
         <activity android:name=".profile.DeveloperNewsActivity"/>
         <activity android:name=".profile.PrivacyPolicyActivity"/>
-        <activity android:name=".profile.OrderActivity">
-        </activity>
-        <activity android:name=".chat.ChatMsgView">
-        </activity>
-        <activity android:name=".commodity.AddCommodityActivity" />
-        <activity android:name=".profile.address.AddAddressActivity" />
-        <activity android:name=".profile.cart.CartActivity"/>
-        <activity android:name=".profile.comment.AddCommentActivity"/>
-        <activity android:name=".profile.comment.CommentActivity"/>
         <activity android:name=".profile.PersonalInfoActivity"/>
-        <activity android:name=".square.BuyCommodityActivity"/>
-        <activity android:name=".notification.NotificationActivity"/>
         <activity android:name=".profile.UserInfoListActivity"
             android:exported="false" />
         <service
