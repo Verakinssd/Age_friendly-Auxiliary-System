@@ -54,24 +54,6 @@
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/button_square"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="广场"
-            android:backgroundTint="@color/yellow"
-            android:textColor="@android:color/white" />
-
-        <Button
-            android:id="@+id/button_messages"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="消息"
-            android:backgroundTint="@color/yellow"
-            android:textColor="@android:color/white" />
-
-        <Button
             android:id="@+id/button_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

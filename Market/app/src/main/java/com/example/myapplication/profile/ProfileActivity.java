@@ -14,16 +14,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.commodity.AddCommodityActivity;
 import com.example.myapplication.database.DBFunction;
 import com.example.myapplication.home.HomepageActivity;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.chat.ChatListActivity;
-import com.example.myapplication.profile.address.AddressActivity;
-import com.example.myapplication.profile.cart.CartActivity;
-import com.example.myapplication.profile.comment.CommentActivity;
-import com.example.myapplication.square.CommodityListActivity;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -40,14 +34,10 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        //初始化控件
         profileImageView = findViewById(R.id.profile_image);
         usernameTextView = findViewById(R.id.username);
 
-        // 设置用户名
         usernameTextView.setText(currentUser);
-        userMoney = findViewById(R.id.user_money);
-        userMoney.setText("账户余额： " + DBFunction.findUserByName(MainActivity.getCurrentUsername()).getMoney());
 
         userSignature = findViewById(R.id.user_signature);
         String signature = DBFunction.findUserByName(MainActivity.getCurrentUsername()).getPersonalitySign();
@@ -57,7 +47,6 @@ public class ProfileActivity extends AppCompatActivity {
             userSignature.setText("^_^");
         }
 
-        // 根据用户名设置头像
         String userImageUrl = MainActivity.getCurrentImageUrl();
 
         if (userImageUrl != null && !userImageUrl.isEmpty()) {
@@ -65,49 +54,10 @@ public class ProfileActivity extends AppCompatActivity {
             Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0 , decodedString.length);
             profileImageView.setImageBitmap(decodedByte);
         }
-        //profileImageView.setImageResource(avatarResId);
-
-        ImageButton cartButton = findViewById(R.id.button_cart);
-        cartButton.setOnClickListener(v-> {
-            Intent intent = new Intent(ProfileActivity.this, CartActivity.class);
-            startActivity(intent);
-        });
-
-        RelativeLayout orderButton = findViewById(R.id.my_order_view);
-        orderButton.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, OrderActivity.class);
-            startActivity(intent);
-        });
-
-        RelativeLayout commentButton = findViewById(R.id.my_comment_view);
-        commentButton.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, CommentActivity.class);
-            startActivity(intent);
-        });
-
-        RelativeLayout favoriteButton = findViewById(R.id.my_favorite_view);
-        favoriteButton.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, FavoriteActivity.class);
-            startActivity(intent);
-        });
-
-        RelativeLayout addressButton = findViewById(R.id.my_address_view);
-        addressButton.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, AddressActivity.class);
-            startActivity(intent);
-        });
 
         RelativeLayout settingsButton = findViewById(R.id.my_settings_view);
         settingsButton.setOnClickListener(v -> {
             Intent intent = new Intent(ProfileActivity.this, SettingsActivity.class);
-            startActivity(intent);
-        });
-
-
-        // 这里可以设置其他初始化逻辑，比如加载数据等
-        Button messagesButton = findViewById(R.id.button_messages);
-        messagesButton.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, ChatListActivity.class);
             startActivity(intent);
         });
 
@@ -117,22 +67,10 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Button squareButton = findViewById(R.id.button_square);
-        squareButton.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, CommodityListActivity.class);
-            startActivity(intent);
-        });
-
         Button homeButton = findViewById(R.id.button_home);
         homeButton.setOnClickListener(v -> {
             Intent intent = new Intent(ProfileActivity.this, HomepageActivity.class);
             startActivity(intent);
         });
-    }
-
-    protected void onResume() {
-
-        super.onResume();
-        userMoney.setText("账户余额： " + DBFunction.findUserByName(MainActivity.getCurrentUsername()).getMoney());
     }
 }

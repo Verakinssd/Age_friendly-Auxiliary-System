@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import static com.example.myapplication.commodity.AddCommodityActivity.encodeImageToBase64;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

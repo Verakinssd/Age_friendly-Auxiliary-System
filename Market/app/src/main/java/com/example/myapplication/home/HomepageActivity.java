@@ -14,9 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.FloatViewService;
-import com.example.myapplication.chat.ChatListActivity;
 import com.example.myapplication.profile.ProfileActivity;
-import com.example.myapplication.square.CommodityListActivity;
 
 public class HomepageActivity extends AppCompatActivity {
 
@@ -46,25 +44,13 @@ public class HomepageActivity extends AppCompatActivity {
             }
 
             Intent intent = new Intent(HomepageActivity.this, FloatViewService.class);
-            intent.putExtra("query", query + "回答请尽量简洁");
+            intent.putExtra("query", query);
             startService(intent);
-        });
-
-        Button messagesButton = findViewById(id.button_messages);
-        messagesButton.setOnClickListener(v -> {
-            Intent intent = new Intent(HomepageActivity.this, ChatListActivity.class);
-            startActivity(intent);
         });
 
         Button userButton = findViewById(id.button_profile);
         userButton.setOnClickListener(v -> {
             Intent intent = new Intent(HomepageActivity.this, ProfileActivity.class);
-            startActivity(intent);
-        });
-
-        Button squareButton = findViewById(id.button_square);
-        squareButton.setOnClickListener(v -> {
-            Intent intent = new Intent(HomepageActivity.this, CommodityListActivity.class);
             startActivity(intent);
         });
 

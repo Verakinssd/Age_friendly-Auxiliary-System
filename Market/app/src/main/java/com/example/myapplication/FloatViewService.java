@@ -185,7 +185,7 @@ public class FloatViewService extends Service {
                         .messages(messageList)
                         .requestId(requestId)
                         .tools(chatToolList)
-                        .toolChoice("auto")
+                        .toolChoice("true")
                         .build();
 
                 ModelApiResponse invokeModelApiResp = client.invokeModelApi(chatCompletionRequest);
@@ -216,10 +216,10 @@ public class FloatViewService extends Service {
         String query = intent.getStringExtra("query");
         StringBuilder sb = new StringBuilder();
         sb.append("查询内容： " + query + "\n");
-        sb.append("返回结果格式如 1.  ....  2. ....  3. .... ， 不需要其他的内容");
+        sb.append("返回结果格式如 1.  ....  2. ....  3. .... ， 不需要其他的内容，结果尽量简洁");
         if (query != null && !query.isEmpty()) {
             try {
-                callZhipuApi(query);
+                callZhipuApi(sb.toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }

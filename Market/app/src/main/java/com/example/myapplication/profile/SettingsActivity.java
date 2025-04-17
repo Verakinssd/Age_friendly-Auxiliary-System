@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.RegisterActivity;
-import com.example.myapplication.square.CommodityListActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -23,12 +21,6 @@ public class SettingsActivity extends AppCompatActivity {
         RelativeLayout personalInfoButton = findViewById(R.id.personal_info);
         personalInfoButton.setOnClickListener(v -> {
             Intent intent = new Intent(SettingsActivity.this, PersonalInfoActivity.class);
-            startActivity(intent);
-        });
-
-        RelativeLayout userInfoListButton = findViewById(R.id.personal_info_collect_list);
-        userInfoListButton.setOnClickListener(v -> {
-            Intent intent = new Intent(SettingsActivity.this, UserInfoListActivity.class);
             startActivity(intent);
         });
 
